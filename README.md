@@ -18,6 +18,7 @@
 - [Spring Security Questions](#spring-security-questions)
 - [Docker Questions](#docker-questions)
 - [Kubernetes Questions](#kubernetes-questions)
+- [Real Interview Questions](#real-interview-questions)
 
 ---
 
@@ -95,7 +96,7 @@
    Java uses an automatic memory management system called Garbage Collection. It manages the lifecycle of objects in the heap memory, reclaiming memory occupied by objects that are no longer in use. This process prevents memory leaks and optimizes application performance. Key components include:
 
    - **Heap Memory:** Divided into Young Generation, Old Generation, and Permanent Generation (Metaspace in Java 8+).
-   - ** stack memory : ** Stores local variables and method parameters and function calls.
+   - **Stack memory :** Stores local variables and method parameters and function calls.
    - **Garbage Collector Algorithms:**
       - Serial GC
       - Parallel GC
@@ -121,3 +122,7 @@
    }
    ```
    
+
+
+
+## Real Interview Questions
