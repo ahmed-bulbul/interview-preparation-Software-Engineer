@@ -178,6 +178,23 @@
    }
    ```
 
+2. **What is the difference between JDK, JRE, and JVM?**
+   - **Answer:**
+       - **JDK (Java Development Kit):** Contains tools for developing Java applications, including the compiler and debugger.
+       - **JRE (Java Runtime Environment):** Provides libraries and JVM for running Java applications.
+       - **JVM (Java Virtual Machine):** Executes Java bytecode and provides platform independence.
+       - 
+3. **What is the difference between final, finally, and finalize?**
+   - **Answer:**
+       - **final:** A keyword for constants, methods that cannot be overridden, or classes that cannot be inherited.
+       - **finally:** A block to execute cleanup code, always executed.
+       - **finalize():** A method called by the Garbage Collector before object destruction.
+
+4. **What is the difference between static and non-static methods?**
+   - **Answer:**
+       - **static:** Belong to the class itself and can be called without creating an instance.
+       - **non-static:** Belong to instances of the class and require an instance to be created.
+
 
 
 
