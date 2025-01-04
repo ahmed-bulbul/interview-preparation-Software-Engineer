@@ -120,7 +120,31 @@
         
    }
    ```
+4. **Factorial Number**
 
+    **Solution:**
+    ```java
+    public class Factorial {
+        public static void main(String[] args) {
+            int n = 5;
+            int fact = 1;
+            for (int i = 1; i <= n; i++) {
+                fact *= i;
+            }
+            System.out.println("Factorial of " + n + " is: " + fact);
+        }
+   
+        //using recursion
+        public static int factorial(int n) {
+            if (n == 0) {
+                return 1;
+            } else {
+                return n * factorial(n - 1);
+            }
+        }
+   
+   
+    }
 ## Core Java Questions
 1. **Java Memory Management and Garbage Collection**
 
