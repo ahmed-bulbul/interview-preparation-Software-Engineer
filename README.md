@@ -87,7 +87,39 @@
        }
    }
    ```
+ 3. **Fibbonacci Series**
 
+   **Solution:**
+   ```java
+   public class Fibbonacci {
+       public static void main(String[] args) {
+           int n = 10;
+           int[] fib = new int[n];
+           fib[0] = 0;
+           fib[1] = 1;
+           for (int i = 2; i < n; i++) {
+               fib[i] = fib[i - 1] + fib[i - 2];
+           }
+           for (int i = 0; i < n; i++) {
+               System.out.print(fib[i] + " ");
+           }
+   
+           // Output: 0 1 1 2 3 5 8 13 21 34    
+            //another approach
+            int n = 10;
+            int a = 0, b = 1;
+            System.out.print(a + " " + b + " ");    
+            for (int i = 0; i < n; i++) {
+                int c = a + b;
+                a = b;
+                b = c;
+                System.out.print(c + " ");
+            }
+       }
+   
+        
+   }
+   ```
 
 ## Core Java Questions
 1. **Java Memory Management and Garbage Collection**
@@ -126,3 +158,26 @@
 
 
 ## Real Interview Questions
+Interview round was almost 2 hour : 30 Min HR Round and 1:30 minutes Technical round
+Bulbul
+Given an array [2,3,5,4]
+k=2
+Count total where difference is 2 Like 5-3 =2, 4-2 =2 [Code]
+
+Runtime Polymorphism Problem [ Code]l
+Stream API [ Map,FlatMap]--[Code]
+Abstraction [ Code]
+Database Locking
+Propagation Label
+SOLID
+Spring Bean
+IOC Container
+Qualifier Annotation
+Decode JWT token
+Circular Dependency
+Why Linked List used over Array List
+Polymorphism
+Interface Segregation
+Bean Scope
+Optional
+Hibernate Entity State (Nice explanation: https://nikhilsukhani.medium.com/hibernate-lifecycle-states-in-hibernate-transient-persistent-detached-removed-40ba2f689b07)
