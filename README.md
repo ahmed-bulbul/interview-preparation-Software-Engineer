@@ -177,31 +177,33 @@
        }
    }
    ```
-   
+
 
 
 
 ## Real Interview Questions
-Interview round was almost 2 hour : 30 Min HR Round and 1:30 minutes Technical round
-Bulbul
-Given an array [2,3,5,4]
-k=2
-Count total where difference is 2 Like 5-3 =2, 4-2 =2 [Code]
+### Interview Overview
+- ** Company : ** Well Dev:** 
+The interview consisted of two rounds:
+- **HR Round:** 30 minutes
+- **Technical Round:** 1 hour 30 minutes
 
-Runtime Polymorphism Problem [ Code]l
-Stream API [ Map,FlatMap]--[Code]
-Abstraction [ Code]
-Database Locking
-Propagation Label
-SOLID
-Spring Bean
-IOC Container
-Qualifier Annotation
-Decode JWT token
-Circular Dependency
-Why Linked List used over Array List
-Polymorphism
-Interface Segregation
-Bean Scope
-Optional
-Hibernate Entity State (Nice explanation: https://nikhilsukhani.medium.com/hibernate-lifecycle-states-in-hibernate-transient-persistent-detached-removed-40ba2f689b07)
+### Questions Asked
+1. Given an array `[2, 3, 5, 4]` and `k=2`, count pairs with a difference of 2
+2. Runtime Polymorphism Problem
+3. Stream API (Map, FlatMap)
+4. Abstraction
+5. Database Locking
+6. Propagation Label
+7. SOLID Principles
+8. Spring Bean
+9. IOC Container
+10. Qualifier Annotation
+11. Decode JWT token
+12. Circular Dependency
+13. Why Linked List is used over Array List
+14. Polymorphism
+15. Interface Segregation Principle
+16. Bean Scope
+17. Optional Class
+18. Hibernate Entity State
