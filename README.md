@@ -183,7 +183,7 @@
 
 ## Real Interview Questions
 ### Interview Overview
-- ** Company : ** Well Dev:** 
+- ** Company : **Well Dev:** 
 The interview consisted of two rounds:
 - **HR Round:** 30 minutes
 - **Technical Round:** 1 hour 30 minutes
