@@ -83,3 +83,38 @@
        }
    }
    ```
+
+
+## Core Java Questions
+1. **Java Memory Management and Garbage Collection**
+
+   **Solution:**
+   Java uses an automatic memory management system called Garbage Collection. It manages the lifecycle of objects in the heap memory, reclaiming memory occupied by objects that are no longer in use. This process prevents memory leaks and optimizes application performance. Key components include:
+
+   - **Heap Memory:** Divided into Young Generation, Old Generation, and Permanent Generation (Metaspace in Java 8+).
+   - ** stack memory : ** Stores local variables and method parameters and function calls.
+   - **Garbage Collector Algorithms:**
+      - Serial GC
+      - Parallel GC
+      - G1 GC (Garbage-First)
+      - ZGC (low-latency)
+
+   Example:
+   ```java
+   public class GarbageCollectionDemo {
+       public static void main(String[] args) {
+           Runtime runtime = Runtime.getRuntime();
+           System.out.println("Total Memory: " + runtime.totalMemory());
+           System.out.println("Free Memory: " + runtime.freeMemory());
+
+           for (int i = 0; i < 10000; i++) {
+               String str = new String("Garbage Collection Example");
+           }
+
+           System.out.println("Free Memory before GC: " + runtime.freeMemory());
+           System.gc();
+           System.out.println("Free Memory after GC: " + runtime.freeMemory());
+       }
+   }
+   ```
+   
