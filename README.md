@@ -161,27 +161,82 @@
    }
    }
    ```
-6. **Prime Number**
+   6. **Prime Number**
 
-   **Solution:**
-   ```java
-   public class PrimeNumber {
-       public static void main(String[] args) {
-           int num = 17;
-           boolean isPrime = true;
-           for (int i = 2; i <= Math.sqrt(num); i++) {
-               if (num % i == 0) {
-                   isPrime = false;
-                   break;
-               }
-           }
-           if (isPrime) {
-               System.out.println(num + " is a prime number.");
-           } else {
-               System.out.println(num + " is not a prime number.");
-           }
+      **Solution:**
+      ```java
+      public class PrimeNumber {
+          public static void main(String[] args) {
+              int num = 17;
+              boolean isPrime = true;
+              for (int i = 2; i <= Math.sqrt(num); i++) {
+                  if (num % i == 0) {
+                      isPrime = false;
+                      break;
+                  }
+              }
+              if (isPrime) {
+                  System.out.println(num + " is a prime number.");
+              } else {
+                  System.out.println(num + " is not a prime number.");
+              }
+          }
+      }
+      ```
+      7. ** Reverse Linked List**
+
+         **Solution:**
+         ```java
+         class Node{
+          int data;
+          Node next;
+
+          Node(int data){
+              this.data = data;
+              this.next = null;
+          }
        }
-   }
+       public class ReverseLinkedList {
+
+        static Node reverse(Node head){
+            Node curr = head, prev = null,next;
+    
+            while (curr!=null){
+                next = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = next;
+            }
+    
+            return prev;
+        }
+    
+        static void printList(Node node) {
+            while (node != null) {
+                System.out.print(" " + node.data);
+                node = node.next;
+            }
+        }
+    
+        public static void main(String[] args) {
+    
+            // Create a hard-coded linked list:
+            // 1 -> 2 -> 3 -> 4 -> 5
+            Node head = new Node(1);
+            head.next = new Node(2);
+            head.next.next = new Node(3);
+            head.next.next.next = new Node(4);
+            head.next.next.next.next = new Node(5);
+    
+            System.out.print("Given Linked list:");
+            printList(head);
+    
+            head = reverse(head);
+    
+            System.out.print("\nReversed Linked List:");
+            printList(head);
+        }
+    }
    ```
    
 ## Core Java Questions
