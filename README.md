@@ -274,7 +274,7 @@
     }
     ```
 2. **Explain Future and CompletableFuture.**
-    **Answer:**
+    - **Answer:**
        - **Future:** Represents async computation.
        - **CompletableFuture:** Enhances Future with callback methods.
 
