@@ -183,7 +183,8 @@
           }
       }
       ```
-7. ** Reverse Linked List**
+7. **Reverse Linked List**
+
     **Solution:**
     ```java
     class Node {
