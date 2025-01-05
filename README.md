@@ -161,7 +161,7 @@
    }
    }
    ```
-   6. **Prime Number**
+6. **Prime Number**
 
       **Solution:**
       ```java
@@ -183,7 +183,7 @@
           }
       }
       ```
-      7. ** Reverse Linked List**
+7. ** Reverse Linked List**
 
          **Solution:**
          ```java
