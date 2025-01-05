@@ -275,8 +275,8 @@
     ```
 2. **Explain Future and CompletableFuture.**
     - **Answer:**
-       - **Future:** Represents async computation.
-       - **CompletableFuture:** Enhances Future with callback methods.
+        - **Future:** Represents async computation.
+        - **CompletableFuture:** Enhances Future with callback methods.
 
 ## Real Interview Questions
 ### Interview Overview
