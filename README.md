@@ -145,6 +145,45 @@
    
    
     }
+    ```
+5. **Reverse a String**
+
+   **Solution:**
+   ```java
+   public class ReverseString {
+       public static void main(String[] args) {
+           String str = "Hello, World!";
+           String reversed = "";
+           for (int i = str.length() - 1; i >= 0; i--) {
+               reversed += str.charAt(i);
+           }
+           System.out.println("Reversed string: " + reversed);
+   }
+   }
+   ```
+6. **Prime Number**
+
+   **Solution:**
+   ```java
+   public class PrimeNumber {
+       public static void main(String[] args) {
+           int num = 17;
+           boolean isPrime = true;
+           for (int i = 2; i <= Math.sqrt(num); i++) {
+               if (num % i == 0) {
+                   isPrime = false;
+                   break;
+               }
+           }
+           if (isPrime) {
+               System.out.println(num + " is a prime number.");
+           } else {
+               System.out.println(num + " is not a prime number.");
+           }
+       }
+   }
+   ```
+   
 ## Core Java Questions
 1. **Java Memory Management and Garbage Collection**
 
