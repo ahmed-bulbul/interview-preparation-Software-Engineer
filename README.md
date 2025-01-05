@@ -184,24 +184,24 @@
       }
       ```
 7. ** Reverse Linked List**
-
-         **Solution:**
-         ```java
-         class Node{
-          int data;
-          Node next;
-
-          Node(int data){
-              this.data = data;
-              this.next = null;
-          }
-       }
-       public class ReverseLinkedList {
-
-        static Node reverse(Node head){
-            Node curr = head, prev = null,next;
+    **Solution:**
+    ```java
+    class Node {
+        int data;
+        Node next;
     
-            while (curr!=null){
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+    
+    public class ReverseLinkedList {
+    
+        static Node reverse(Node head) {
+            Node curr = head, prev = null, next;
+    
+            while (curr != null) {
                 next = curr.next;
                 curr.next = prev;
                 prev = curr;
@@ -228,7 +228,7 @@
             head.next.next.next = new Node(4);
             head.next.next.next.next = new Node(5);
     
-            System.out.print("Given Linked list:");
+            System.out.print("Given Linked List:");
             printList(head);
     
             head = reverse(head);
