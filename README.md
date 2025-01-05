@@ -255,6 +255,29 @@
 
 
 
+
+## Threading
+1. **How Synchronized works?**
+    **Answer:**
+    - **Synchronized:** A keyword for constants, methods that cannot be overridden, or classes that cannot be inherited.
+    - **synchronized:** A block to execute cleanup code, always executed.
+    - **synchronized():** A method called by the Garbage Collector before object destruction.
+    - Lock Acquisition:
+
+    -When a thread reaches a synchronized block or method, it attempts to acquire the monitor lock of the object or class.
+    -Blocking Other Threads:
+
+    -If the lock is already held by another thread, the current thread is blocked until the lock is released. 
+    ```java
+    synchronized (this) {
+        // Code to be synchronized
+    }
+    ```
+2. **Explain Future and CompletableFuture.**
+    **Answer:**
+       - **Future:** Represents async computation.
+       - **CompletableFuture:** Enhances Future with callback methods.
+
 ## Real Interview Questions
 ### Interview Overview
 - ** Company : **Well Dev:** 
