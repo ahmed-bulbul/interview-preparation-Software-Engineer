@@ -406,7 +406,7 @@ The interview consisted of two rounds:
 18. Hibernate Entity State
 
 ## Company: Agoda:
-The Hacker rank assesment consisted of two rounds:
+Agoda's Technical Assessment (Back End) - Software Engineering
 
 ## Questions Asked
 1. For a list of n segment each segment i is defined by two integers startAt[i] and endsAt[i. This segment includes the points startsAt[i] through endsAt[i] on the number line.
