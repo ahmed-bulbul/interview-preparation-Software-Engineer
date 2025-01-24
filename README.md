@@ -373,6 +373,11 @@
         - **Future:** Represents async computation.
         - **CompletableFuture:** Enhances Future with callback methods.
 
+3. **Sleep and Wait.**
+    - **Answer:**
+        - **sleep:** Pauses execution for a given time.
+        - **wait:** Pauses execution until a condition is met. wait() and notify() are used for synchronization.
+
 ## Real Interview Questions
 ### Interview Overview
 - ** Company : **Well Dev:** 
@@ -399,3 +404,208 @@ The interview consisted of two rounds:
 16. Bean Scope
 17. Optional Class
 18. Hibernate Entity State
+
+## Company: Agoda:
+The Hacker rank assesment consisted of two rounds:
+
+## Questions Asked
+1. For a list of n segment each segment i is defined by two integers startAt[i] and endsAt[i. This segment includes the points startsAt[i] through endsAt[i] on the number line.
+   For each segment i(0<=i<n),determine the nuber of other segments that intersect if they are share at least common point on the number line.
+
+        Example n=2 segments
+        startAt=[1,3]
+        endsAt=[4,5]
+        
+        the 1st segment [1,2,3] intersects with the 2nd segmen[3,4,5] at the point of 3 and 4
+        
+        the total intersection for each segment is 1. The answer is [1,1]
+        
+        public static List<Integer> countIntersections(List<Integer> startsAt,List<Integer> endAt){
+        
+        }
+
+    ```
+        import java.util.ArrayList;
+        import java.util.List;
+        
+        public class Solution {
+        public static List<Integer> countIntersections(List<Integer> startsAt, List<Integer> endsAt) {
+        int n = startsAt.size();
+        List<Integer> result = new ArrayList<>();
+
+        // Check for intersections
+        for (int i = 0; i < n; i++) {
+            int count = 0;
+            for (int j = 0; j < n; j++) {
+                if (i != j) {
+                    // Check if segment i intersects with segment j
+                    if (startsAt.get(i) <= endsAt.get(j) && endsAt.get(i) >= startsAt.get(j)) {
+                        count++;
+                    }
+                }
+            }
+            result.add(count);
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        List<Integer> startsAt = List.of(1, 3);
+        List<Integer> endsAt = List.of(4, 5);
+
+        List<Integer> result = countIntersections(startsAt, endsAt);
+        System.out.println(result);  // Output: [1, 1]
+    }
+    ```
+   2. APi Fetching
+            Given a coutry name and a phone number ,query the api at https://jsonmock.hackerrank.com/api/countries?name=country 
+            to get the countrus calling code.if there multiple calling code ,use at the heighest index. 
+            prepent the calling code to the phone number and return the string . if the data array is empty return the string -1
+           the format of the number should be :
+           +<calling code><space><Phone number>
+           Example : +1 7653555443
+        
+           The response is a json object with 5 field. the essential field is data:
+           data: either an empty array or an array with single object that contains the countrys record.
+        
+           In the data array,the country has following schema:
+           . name: the name of the country
+           .CallingCode: an array of the country's calling code(string array)
+           . A number of fields that are not og interest
+        
+           page,per_page,total_page,total_pages etc, are required for this task
+        
+           if the country is found ,the data array contains exactly 1 element. if not it is empty ,and the function should return '-1'
+        
+           if the country name is 'Afganistan' for example
+        
+           A portion of the code of the country record Afganistan is :
+           {
+           "name": "Afghanistan",
+              "nativeName": "افغانستان",
+              "topLevelDomain": [
+              ".af"
+              ],
+              "alpha2Code": "AF",
+              "numericCode": "004",
+              "alpha3Code": "AFG",
+              "currencies": [
+              "AFN"
+              ],
+              "callingCodes": [
+              "93"
+              ],
+              "capital": "Kabul",
+              "altSpellings": [
+              "AF",
+              "Afġānistān"
+              ],
+              "relevance": "0",
+              "region": "Asia",
+              "subregion": "Southern Asia",
+              "language": [
+              "Pashto",
+              "Dari"
+              ],
+              "languages": [
+              "ps",
+              "uz",
+              "tk"
+              ],
+              "translations": {
+              "de": "Afghanistan",
+              "es": "Afganistán",
+              "fr": "Afghanistan",
+              "it": "Afghanistan",
+              "ja": "アフガニスタン",
+              "nl": "Afghanistan",
+              "hr": "Afganistan"
+              },
+              "population": 26023100,
+              "latlng": [
+              33,
+              65
+              ],
+              "demonym": "Afghan",
+              "borders": [
+              "IRN",
+              "PAK",
+              "TKM",
+              "UZB",
+              "TJK",
+              "CHN"
+              ],
+              "area": 652230,
+              "gini": 27.8,
+              "timezones": [
+              "UTC+04:30"
+              ]
+           }
+        
+           so now complete my function
+        
+           public static String getPhoneNumbers(String country,String phoneNumber){
+           }
+   ```
+       import java.io.BufferedReader;
+        import java.io.InputStreamReader;
+        import java.net.HttpURLConnection;
+        import java.net.URL;
+        import org.json.JSONArray;
+        import org.json.JSONObject;
+        
+        public class Solution {
+        public static String getPhoneNumbers(String country, String phoneNumber) {
+        try {
+        // Build the API URL with the provided country
+        String apiUrl = "https://jsonmock.hackerrank.com/api/countries?name=" + country;
+
+            // Make the HTTP GET request to the API
+            HttpURLConnection connection = (HttpURLConnection) new URL(apiUrl).openConnection();
+            connection.setRequestMethod("GET");
+            
+            // Read the response
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            StringBuilder response = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                response.append(line);
+            }
+            reader.close();
+            
+            // Parse the JSON response
+            JSONObject jsonResponse = new JSONObject(response.toString());
+            JSONArray data = jsonResponse.getJSONArray("data");
+            
+            // If the data array is empty, return -1
+            if (data.length() == 0) {
+                return "-1";
+            }
+            
+            // Get the country's calling code (use the highest index in the array)
+            JSONObject countryData = data.getJSONObject(0);
+            JSONArray callingCodes = countryData.getJSONArray("callingCodes");
+            
+            // If callingCodes is not empty, get the last one (highest index)
+            if (callingCodes.length() > 0) {
+                String callingCode = callingCodes.getString(callingCodes.length() - 1);
+                return "+" + callingCode + " " + phoneNumber;
+            }
+            
+            // If no calling codes are found, return -1
+            return "-1";
+            
+        } catch (Exception e) {
+            // If an error occurs, return -1
+            return "-1";
+        }
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        String result = getPhoneNumbers("Afganistan", "7653555443");
+        System.out.println(result);  // Expected: +93 7653555443
+    }
+    }
+```
