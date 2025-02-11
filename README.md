@@ -239,7 +239,7 @@
           }
      }
      ```
-8. **Java program to find duplicate characters in a  string **
+8. **Java program to find duplicate characters in a  string**
 
     **Solution:**
     ```java
@@ -260,7 +260,8 @@
         }
     } 
 
-** Must read **
+
+**Must read** 
 
     𝗔𝗿𝗿𝗮𝘆𝘀
     1. Two Sum 
@@ -346,6 +347,9 @@
     5. Coin Change
     - https://lnkd.in/d-ByK5Fx
 
+
+
+ 
    
 ## Core Java Questions
 1. **Java Memory Management and Garbage Collection**
