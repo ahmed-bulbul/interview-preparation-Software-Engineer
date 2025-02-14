@@ -284,30 +284,45 @@
 
     **Solution:**
     ```java
-    import java.util.*;
-    public class LongestWithoutRepeating {
+    
+    import java.util.HashSet;
+
+    public class LongestSubstringWithoutRepeatingChar {
+
         public static void main(String[] args) {
-            String str = "abcabcbb";
-            int n = str.length();
+            String s1 = "abcabcbb"; // Expected: "abc", length 3
+            String s2 = "bbbbb";
+        // Expected: "b", length 1
+            String s3 = "pwwkew";
+            String s4 = "";
+        // Expected: "wke", length 3
+        // Expected: "", length 0
+            System.out.println("Longest substring without repeating characters in s1:" + lengthOfLongestSubstring(s1)); // Output: 3
+            System.out.println("Longest substring without repeating  characters in s2:" + lengthOfLongestSubstring(s2)); // Output: 1
+            System.out.println("Longest substring without repeating  characters in s3:" + lengthOfLongestSubstring(s3)); // Output: 3
+            System.out.println("Longest substring without repeating  characters in s4:" + lengthOfLongestSubstring(s4)); // Output: 0
+        }
+
+        public static int lengthOfLongestSubstring(String s) {
+            HashSet<Character> set = new HashSet<>();
             int maxLength = 0;
             int start = 0;
             int end = 0;
-            Map<Character, Integer> charIndexMap = new HashMap<>();
-            for (int i = 0; i < n; i++) {
-                char c = str.charAt(i);
-                if (charIndexMap.containsKey(c)) {
-                    start = Math.max(start, charIndexMap.get(c) + 1);
+            while (end < s.length()) {
+                char currentChar = s.charAt(end);
+                if (!set.contains(currentChar)) {
+                    set.add(currentChar);
+                    maxLength = Math.max(maxLength, end - start + 1);
+                    end++;
+                } else {
+                    set.remove(s.charAt(start));
+                    start++;
                 }
-                charIndexMap.put(c, i);
-                maxLength = Math.max(maxLength, i - start + 1);
             }
-            System.out.println("Longest substring without repeating characters: " + maxLength);
-            for (int i = start; i < start + maxLength; i++) {
-                System.out.print(str.charAt(i));
-            }
-            }
+            return maxLength;
         }
-    ```
+    }
+```
 
 
 
