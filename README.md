@@ -280,6 +280,35 @@
         }
     }
     ```
+10. **Java program to find the longest without repeating characters**
+
+    **Solution:**
+    ```java
+    import java.util.*;
+    public class LongestWithoutRepeating {
+        public static void main(String[] args) {
+            String str = "abcabcbb";
+            int n = str.length();
+            int maxLength = 0;
+            int start = 0;
+            int end = 0;
+            Map<Character, Integer> charIndexMap = new HashMap<>();
+            for (int i = 0; i < n; i++) {
+                char c = str.charAt(i);
+                if (charIndexMap.containsKey(c)) {
+                    start = Math.max(start, charIndexMap.get(c) + 1);
+                }
+                charIndexMap.put(c, i);
+                maxLength = Math.max(maxLength, i - start + 1);
+            }
+            System.out.println("Longest substring without repeating characters: " + maxLength);
+            for (int i = start; i < start + maxLength; i++) {
+                System.out.print(str.charAt(i));
+            }
+            }
+        }
+    ```
+
 
 
 **Must read** 
