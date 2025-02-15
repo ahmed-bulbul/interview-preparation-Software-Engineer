@@ -322,25 +322,38 @@
             }
         }
       ```
-11. **Find Common Elements betwwen two Arrays**
+    11. **Find Common Elements betwwen two Arrays**
 
-    **Solution:**
-    ```java
-    import java.util.*;
-    public class CommonElements {
-        public static void main(String[] args) {
+        **Solution:**
+        ```java
+        import java.util.*;
+        public class CommonElements {
+            public static void main(String[] args) {
             int[] arr1 = {1, 2, 3, 4, 5};
             int[] arr2 = {4, 5, 6, 7, 8};
-            Set<Integer> commonElements = new HashSet<>();
+
+            Set<Integer> commonElements = findCommonElements(arr1, arr2);
+            System.out.println(commonElements);
+            }
+    
+        private static Set<Integer> findCommonElements(int[] arr1, int[] arr2) {
+            Set<Integer> set1 = new HashSet<>();
+            Set<Integer> commonSet = new HashSet<>();
+
             for (int num : arr1) {
-                if (Arrays.binarySearch(arr2, num) >= 0) {
-                    commonElements.add(num);
+                set1.add(num);
+            }
+
+            for (int num : arr2) {
+                if (set1.contains(num)) {
+                    commonSet.add(num);
                 }
             }
-            System.out.println("Common elements between arr1 and arr2: " + commonElements);
+
+            return commonSet;
         }
-    }
-    ```
+        }
+        ```
 
 
 
